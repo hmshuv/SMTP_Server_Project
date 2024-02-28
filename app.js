@@ -3,6 +3,9 @@ const { error } = require("console");
 const SMTPServer  = require("smtp-server").SMTPServer;
 
 const server = new SMTPServer({
+   allowInsecureAuth: true,
+   authOptional: true,
+
    onConnect(session, cb){
       // cb(new error('Cannot accept connection'))
       console.log(`onConnect`, session.id);
