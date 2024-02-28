@@ -16,7 +16,11 @@ const server = new SMTPServer({
       console.log(`OnRcptTo`, address.address, session.id);
       cb();
    },
-   
+   onData(stream, session, cb){
+      stream.on('data', (data) => console.log(`onData ${data.toString()}`));
+      stream.on('end', cb)
+   }
+
 });
 
 server.listen(25, ()=> console.log("Server running on port 25"));
