@@ -1,3 +1,5 @@
+const express = require("express");
+const app = express();
 const { error } = require("console");
 
 const SMTPServer  = require("smtp-server").SMTPServer;
@@ -28,3 +30,4 @@ const server = new SMTPServer({
 });
 
 server.listen(PORT, ()=> console.log(`Server running on port ${PORT}`));
+
