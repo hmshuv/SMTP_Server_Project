@@ -1,6 +1,7 @@
 const { error } = require("console");
 
 const SMTPServer  = require("smtp-server").SMTPServer;
+const PORT = 25;
 
 const server = new SMTPServer({
    allowInsecureAuth: true,
@@ -26,4 +27,4 @@ const server = new SMTPServer({
 
 });
 
-server.listen(25, ()=> console.log("Server running on port 25"));
+server.listen(PORT, ()=> console.log(`Server running on port ${PORT}`));
